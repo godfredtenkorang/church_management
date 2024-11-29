@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Management</title>
+</head>
+<style>
+.message-container {
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 30px 20px;
+    max-width: 400px;
+    box-shadow: 0, 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.btn {
+    background-color: #A0D683;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 3s ease;
+}
+
+.btn:hover {
+    background-color: #72BF78;
+}
+
+</style>
+<body>
+    <div class="message-container">
+        <div class="container">
+            <h1 class="h1">Message sent successfully</h1>
+            <a class="btn" href="{% url 'index' %}">Go home</a>
+        </div>
+    </div>
+</body>
+</html>
