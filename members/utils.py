@@ -13,6 +13,12 @@ def send_sms(phone_number, message):
         "schedule_date": ''
     }
     url = endpoint + '?key=' + apiKey
-
-    response = requests.post(url, data)
-    return response.json()
+    try:
+        response = requests.post(url, data, proxies={"http":None, "https":None})
+        response.raise_for_status()
+        
+        return response.json()
+    
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending SMS: {e}")
+        return None
