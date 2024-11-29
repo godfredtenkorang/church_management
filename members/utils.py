@@ -4,7 +4,7 @@ from django.conf import settings
 def send_sms(phone_number, message):
     endpoint = "https://api.mnotify.com/api/sms/quick"
     apiKey = settings.MNOTIFY_API_KEY
-    data = {
+    payload = {
         "key": apiKey,
         "sender": 'NewspringAG',
         "recipient[]": phone_number,
@@ -14,7 +14,7 @@ def send_sms(phone_number, message):
     }
     url = endpoint + '?key=' + apiKey
     try:
-        response = requests.post(url, data, proxies={"http":None, "https":None})
+        response = requests.post(url, data=payload, proxies={"http":None, "https":None})
         response.raise_for_status()
         
         return response.json()
