@@ -12,9 +12,17 @@ def send_sms(phone_number, message):
         "is_schedule": False,
         "schedule_date": ''
     }
+    
+
     url = endpoint + '?key=' + apiKey
+    
+    proxy = "http://www.find-ip.net:69.197.191.214"
+    proxies = {
+        'http': proxy,
+        'https': proxy,
+    }
     try:
-        response = requests.post(url, data=payload, proxies={"http":None, "https":None})
+        response = requests.post(url, data=payload, proxies=proxies)
         response.raise_for_status()
         
         return response.json()
