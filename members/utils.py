@@ -16,7 +16,7 @@ def send_sms(phone_number, message):
 
     url = endpoint + '?key=' + apiKey
     
-    proxy = "http://www.find-ip.net:69.197.191.214"
+    proxy = "156.228.109.102:3128"
     proxies = {
         'http': proxy,
         'https': proxy,
