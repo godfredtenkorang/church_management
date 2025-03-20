@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form - NEWSPRING ASSEMBLIES OF GOD RESCUE TEAM DATABASE MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="{% static 'members/style.css' %}">
+</head>
+
+<style>
+    body {
+        background-color: #c4c1c1;
+    }
+</style>
+
+<body>
+    <div class="form-container">
+        <header class="header">
+            <img src="{% static 'members/image/logo.png.png' %}" alt="Left Logo" class="logo left-logo">
+            <h1>NEWSPRING ASSEMBLIES OF GOD RESCUE TEAM DATABASE MANAGEMENT SYSTEM</h1>
+        </header>
+
+        <form class="form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Title</label>
+                <select id="title" name="title" required>
+                    <option value="">Select...</option>
+                    <option value="">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Ms</option>
+                    <option value="Dr">Dr</option>
+                    <option value="Ps">Ps</option>
+                    <option value="LP">LP</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstName" name="firstname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastName" name="lastname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="middlename">Middle Name</label>
+                <input type="text" id="middleName" name="middlename">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="marital_status">Marital Status</label>
+                <select id="maritalStatus" name="marital_status" required>
+                    <option value="">Select...</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="membership_status">Membership Status</label>
+                <select id="membershipStatus" name="membership_status" required>
+                    <option value="">Select...</option>
+                    <option value="First Time Visitor">FIRST TIME VISITOR👋✨🙏</option>
+                    <option value="Regular Visitor">REGULAR VISITOR 👋✨🙏</option>
+                    <option value="New members">DO YOU WANT TO BE A MEMBER? 🙌✝️🔥</option>
+                    <option value="Alter Call">ACCEPTED JESUS AS LORD AND SAVIOR 🙌✝️</option>
+                </select>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" name="consent_participate" required>
+                    Consent to Participate
+                </label>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" name="consent_data" required>
+                    Consent for Data Use and Storage
+                </label>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <script src="{% static 'members/app.js' %}" defer></script>
+    </div>
+</body>
+
+</html>
